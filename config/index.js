@@ -6,39 +6,15 @@ module.exports = {
   static: {
     scss: './../static/css/global.scss'
   },
-  // webpack external 
+  // webpack external, if has exexternals, the static src will inject into html;
+  // it will go like webpack externals
   externals: {
-    'vue': {
-      module: 'Vue',
-      js: `https://cdn.bootcss.com/vue/2.5.13/vue${process.env.NODE_ENV === 'production' ? '.min' : ''}.js`
-    },
-    'vue-router': {
-      module: 'VueRouter',
-      js: 'https://cdn.bootcss.com/vue-router/3.0.1/vue-router.min.js'
-    },
-    'vuex': {
-      module: 'Vuex',
-      js: 'https://cdn.bootcss.com/vuex/3.0.1/vuex.min.js'
-    },
-    'flyio': {
-      module: 'fly',
-      js: 'https://unpkg.com/flyio/dist/fly.min.js'
-    },
-    'element-ui': {
-      module: 'ELEMENT',
-      js: 'https://unpkg.com/element-ui/lib/index.js',
-      css: 'https://unpkg.com/element-ui/lib/theme-chalk/index.css'
-    }
   },
   dev: {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      "/api/v1": {
-        target: 'https://www.bitboole.com/',
-        changeOrigin: true
-      }
     },
 
     // Various Dev Server settings
@@ -50,7 +26,7 @@ module.exports = {
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
     // Use Eslint Loader?
-    useEslint: true,
+    useEslint: false,
     // If true, eslint errors and warnings will also be shown in the error overlay
     // in the browser.
     showEslintErrorsInOverlay: false,

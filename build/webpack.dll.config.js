@@ -5,7 +5,7 @@ const webpack = require("webpack");
 module.exports = {
   mode: 'production',
   entry: {
-    vendor: ['@babel/polyfill']
+    vendor: ['@babel/polyfill', 'vue/dist/vue.js', 'vuex', 'vue-router']
   },
   output: {
     path: path.join(__dirname, '../static/js'), 

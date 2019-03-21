@@ -2,12 +2,13 @@
 import { Vue, Component } from 'vue-property-decorator'
 
 @Component
-export default class App extends Vue {
+export default class ss extends Vue {
   render () {
-    return (<div id="app">
-      <img src={ require('@/assets/logo.png') } />
-      <router-view/>
-    </div>)
+    return (
+      <div id="app">
+        <router-view />
+      </div>
+    )
   }
 }
 </script>

@@ -66,26 +66,6 @@ const webpackConfig = merge(baseWebpackConfig, {
         ? { safe: true, map: { inline: false } }
         : { safe: true }
     }),
-    // generate dist index.html with correct asset hash for caching.
-    // you can customize output by editing /index.html
-    // new HtmlWebpackPlugin({
-    //   filename: config.build.index,
-    //   template: 'index.ejs',
-    //   inject: true,
-    //   files: utils.external(),
-    //   minify: {
-    //     removeComments: true,
-    //     collapseWhitespace: true,
-    //     removeAttributeQuotes: true
-    //   },
-    //   // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-    //   chunksSortMode: 'dependency'
-    // }),
-    // // insert the dll.js into html 
-    // new IncludeAssetsPlugin({
-    //   assets: [`${config.build.assetsSubDirectory}/js/vendor.dll.js`],
-    //   append: false
-    // }),
     // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),
     // clean dist
