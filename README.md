@@ -1,4 +1,18 @@
-# sss
+# webpack 4 and babel 7 简单的vue项目
+
+``` bash
+# 支持async，await
+
+# 支持vue-property-decorator写法
+
+# 支持eslint
+
+# 支持dll
+
+# 支持externals
+
+# 支持单元测试
+```
 
 > A Vue.js project
 
@@ -8,14 +22,14 @@
 # install dependencies
 npm install
 
+# 如有dll预打包
+npm run dll
+
 # serve with hot reload at localhost:8080
 npm run dev
 
 # build for production with minification
 npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 
 # run unit tests
 npm run unit
@@ -25,6 +39,22 @@ npm run e2e
 
 # run all tests
 npm test
+
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# 注意点：
+
+``` bash
+# dll 打包 vue， vendor里写成vue/dist/vue.js
+
+# 了解一些webpack4的mode
+```
+
+# 遇到问题：
+``` bash
+# 主要是e2e, unit升级问题，babel版本要与插件版本对应起来；
+
+# webpack4废弃插件以及如何代替
+
+# vue-loader向版本15迁移
+```
