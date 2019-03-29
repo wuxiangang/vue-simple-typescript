@@ -1,4 +1,4 @@
-# webpack 4 and babel 7 简单的vue项目
+# webpack 4 and babel 7 typescript
 
 ``` bash
 # 支持async，await
