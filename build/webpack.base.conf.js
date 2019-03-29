@@ -1,14 +1,13 @@
 'use strict'
 const path = require('path')
 const utils = require('./utils')
-const vueLoaders = require('./vue.loaders')
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const tsLoaders = require('./ts.loaders')
 const config = require('../config')
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './src/main.js'
+    app: './src/main.ts'
   },
   output: {
     path: config.build.assetsRoot,
@@ -18,7 +17,7 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.tsx', '.ts',  '.js', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.js',
       '@': utils.resolve('src'),
@@ -26,7 +25,7 @@ module.exports = {
     }
   },
   module: {
-    rules: vueLoaders
+    rules: tsLoaders
   },
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue
@@ -39,8 +38,5 @@ module.exports = {
     net: 'empty',
     tls: 'empty',
     child_process: 'empty'
-  },
-  plugins: [
-    new VueLoaderPlugin()
-  ]
+  }
 };

@@ -3,12 +3,20 @@ const utils = require('./utils')
 const config = require('../config')
 
 const publicLoaders = [
-  ...(config.dev.useEslint ? [utils.createLintingRule()] : []),
+  ...(config.dev.useTslint ? [utils.createLintingRule()] : []),
   {
-    test: /\.vue$/,
-    use: [{
-      loader: 'vue-loader',
-    }]
+    test: /\.tsx?$/,
+    loader: 'awesome-typescript-loader',
+    options: {
+      "useBabel": true,
+      "babelCore": "@babel/core"
+    }
+  },
+  {
+    test: /\.ts$/,
+    exclude: /node_modules/,
+    enforce: 'pre',
+    loader: 'tslint-loader'
   },
   {
     test: /\.js$/,

@@ -5,13 +5,12 @@ const config = require('../config')
 const packageConfig = require('../package.json')
 
 exports.createLintingRule = () => ({
-  test: /\.(js|vue)$/,
-  loader: 'eslint-loader',
+  test: /\.tsx?$/,
+  loader: 'tslint-loader',
   enforce: 'pre',
-  include: [exports.resolve('src'), exports.resolve('test')],
+  include: [exports.resolve('src')],
   options: {
-    formatter: require('eslint-friendly-formatter'),
-    emitWarning: !config.dev.showEslintErrorsInOverlay
+    emitWarning: !config.dev.showTslintErrorsInOverlay
   }
 })
 
@@ -68,7 +67,7 @@ exports.cssLoaders = () => {
         options: Object.assign({}, loaderOptions, options)
       })
     }
-    return ['vue-style-loader'].concat(loaders)
+    return ['style-loader'].concat(loaders)
 
   }
 
